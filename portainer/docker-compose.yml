@@ -1,0 +1,19 @@
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: always
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /docker_data/portainer_data:/portainer_data
+    ports:
+      - 9000:9000
+      - 9001:9443
+networks:
+  default:
+    name: nginx-network
+    external: true
+

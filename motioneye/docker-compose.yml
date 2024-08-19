@@ -1,0 +1,15 @@
+services:
+    app:
+        image: ghcr.io/motioneye-project/motioneye:edge
+        container_name: motioneye
+        hostname: motioneye
+        restart: unless-stopped
+        privileged: true
+        ports:
+            - 2085:8765
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - /etc/motioneye:/data/etc/motioneye
+            - /var/lib/motioneye:/var/lib/motioneye
+            - ${BASE}/.local/motioneye/recordings:/data/output/
+            - /dev/video0:/dev/video0

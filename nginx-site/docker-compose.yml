@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+    client:
+        image: nginx
+        container_name: nginx-site
+        restart: unless-stopped
+        ports:
+            - 2002:80
+            - 2003:443
+        volumes:
+            - ${BASE}/sites:/var/www/
+

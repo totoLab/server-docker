@@ -1,0 +1,15 @@
+services:
+    monitoring:
+        image: nicolargo/glances:3.4.0.5-full
+        container_name: glances
+        restart: always
+        privileged: true
+        pid: host
+        ports:
+          - 61208-61209:61208-61209
+        volumes:
+          - ${BASE}/.config/glances/glances.pwd:/root/.config/glances/glances.pwd
+          - /var/run/docker.sock:/var/run/docker.sock
+        environment:
+          - "GLANCES_OPT=-w"
+          - TZ=Europe/Rome

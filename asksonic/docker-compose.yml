@@ -1,0 +1,14 @@
+services:
+  asksonic:
+    image: asksonic:latest
+    container_name: asksonic
+    ports:
+      - 4545:4545
+      - 5000:5000
+    environment:
+      - ASKS_SUBSONIC_URL=${DOMAIN}
+      - ASKS_SUBSONIC_USER=${USER}
+      - ASKS_SUBSONIC_PASS=${PASS}
+      - ASKS_SUBSONIC_PORT=4533
+      - ASKS_SUBSONIC_APIVERSION=${VERSION}
+

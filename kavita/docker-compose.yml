@@ -1,0 +1,13 @@
+services:
+    kavita:
+        image: jvmilazz0/kavita:latest
+        container_name: kavita
+        volumes:
+            - ${BASE}/library/books:/books
+            - ./data:/kavita/config
+
+        environment:
+            - TZ=Europe/Rome
+        ports:
+            - "5000:5000"
+        restart: unless-stopped

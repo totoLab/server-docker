@@ -1,0 +1,19 @@
+version: "3"
+services:
+  upsnap:
+    container_name: upsnap
+    image: ghcr.io/seriousm4x/upsnap:4
+    network_mode: host
+    restart: unless-stopped
+    user: 1000:1000
+    ports:
+      - 8090:8090
+    volumes:
+      - ./data:/app/pb_data
+    environment:
+      - TZ=Europe/Rome
+
+networks:
+  default:
+    external: true
+    name: upsnap
