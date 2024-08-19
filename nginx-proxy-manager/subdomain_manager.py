@@ -6,13 +6,19 @@ def load_config(config_file):
     try:
         with open(config_file, "r") as f:
             config = json.load(f)
-        return config
+            obj = config["cloudflare"]
+            if obj["authentication"]["api_token"] != "" and obj["zone_id"] != "":
+                return config
+            print(f"Error: The config file has missing options, go to http://dash.cloudflare.com and search for api_token and zone_id.")
     except FileNotFoundError:
         print(f"Error: The file '{config_file}' was not found.")
-        exit(1)
+        if "y" in input("Want to start with a new one? (y/N)").lower():
+            template_path = os.path.join(os.path.realpath(__file__), "template.json")
+            return load_config(template_path)
     except json.JSONDecodeError:
         print(f"Error: The file '{config_file}' is not a valid JSON file.")
-        exit(1)
+    
+    exit(1)
 
 def save_config(config_files, config):
     with open(config_files["config_file"], "w") as f:

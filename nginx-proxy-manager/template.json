@@ -1,0 +1,20 @@
+{
+    "cloudflare": [
+        {
+            "authentication": {
+                "api_token": ""
+            },
+            "zone_id": "",
+            "subdomains": [
+                {
+                    "name": "@",
+                    "proxied": true
+                }
+            ]
+        }
+    ],
+    "a": true,
+    "aaaa": true,
+    "purgeUnknownRecords": false,
+    "ttl": 300
+}
