@@ -27,6 +27,11 @@ def save_config(config_files, config):
 
     subdomains_names = [item["name"] for item in get_configured_subdomains(config)]
     for save_location in config_files["alternative_save_location"]:
+        directory = os.path.dirname(save_location)
+        if not os.path.exists(directory):
+            print(f"Error: coulndn't find directory '{os.path.dirname(save_location)}' to save the subdomains list.")
+            continue
+        
         with open(save_location, "w") as f:
             json.dump(subdomains_names, f)
 
@@ -76,6 +81,8 @@ def main():
     save_locations = {
         "config_file": config_file,
         "alternative_save_location": [
+            os.path.expanduser("~/sites/antolab.xyz/html/data.json")
+        ]
     }
 
     while True:
