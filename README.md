@@ -2,7 +2,8 @@
 Server is currently
 - a RPi4 2GB
 - an old x86_64 laptop
-with both machines running Ubuntu Server. All images and containers are tested on ARM64 architecture, except for Immich, running on x86_64.
+
+<br>with both machines running Ubuntu Server. All images and containers are tested on ARM64 architecture, except for Immich, running on x86_64.
 
 # Prerequisites
 ```
