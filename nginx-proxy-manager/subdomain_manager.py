@@ -67,7 +67,8 @@ def remove_subdomain(config):
 
 def main():
     parser = argparse.ArgumentParser(description="Manage Cloudflare subdomains in a config file.")
-    parser.add_argument("config_file", help="Path to the config file")
+    parser.add_argument("config_file", nargs='?', default="",
+                        help="Path to the config file (default: None)")
 
     args = parser.parse_args()
 
