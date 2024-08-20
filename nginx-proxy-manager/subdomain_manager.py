@@ -6,14 +6,15 @@ def load_config(config_file):
     try:
         with open(config_file, "r") as f:
             config = json.load(f)
-            obj = config["cloudflare"]
+            obj = config["cloudflare"][0]
             if obj["authentication"]["api_token"] != "" and obj["zone_id"] != "":
-                return config
-            print(f"Error: The config file has missing options, go to http://dash.cloudflare.com and search for api_token and zone_id.")
+                return config, config_file
+            print(f"Error: The config file '{os.path.basename(config_file)}' has missing options, go to http://dash.cloudflare.com and search for api_token and zone_id.")
     except FileNotFoundError:
         print(f"Error: The file '{config_file}' was not found.")
-        if "y" in input("Want to start with a new one? (y/N)").lower():
-            template_path = os.path.join(os.path.realpath(__file__), "template.json")
+        if "y" in input("Want to start with a new one? (y/N) ").lower():
+            program_directory = os.path.dirname(os.path.realpath(__file__))
+            template_path = os.path.join(program_directory, "template.json")
             return load_config(template_path)
     except json.JSONDecodeError:
         print(f"Error: The file '{config_file}' is not a valid JSON file.")
@@ -70,10 +71,10 @@ def main():
 
     args = parser.parse_args()
 
-    config = load_config(args.config_file)
+    config, config_file = load_config(args.config_file)
     save_locations = {
-        "config_file": args.config_file,
-        "alternative_save_location": [os.path.expanduser("~/sites/antolab.xyz/html/data.json")]
+        "config_file": config_file,
+        "alternative_save_location": [
     }
 
     while True:
