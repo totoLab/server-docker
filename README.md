@@ -21,8 +21,8 @@ RPi4 acts as a networking hub, for managing and  monitoring the network. Both in
 - [x] motioneye
 
 ## Main server (2)
-[!WARNING]
-This machine will be managed through a docker agent from 
+> [!WARNING]  
+> This machine will be managed through a docker agent from the [Network Hub](#network-hub-1)
 
 - [x] immich
 - [ ] vaultwarden
