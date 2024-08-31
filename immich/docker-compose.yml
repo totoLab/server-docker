@@ -20,6 +20,8 @@ services:
       - ${UPLOAD_LOCATION}:/usr/src/app/upload
       - ./external/laptop:/usr/src/app/external/common/laptop
       - ./external/takeout:/usr/src/app/external/common/takeout
+      - ./external/theWeekndConcert:/usr/src/app/external/common/theWeekndConcert
+      - ./external/avventuraCompressa:/usr/src/app/external/common/avventuraCompressa
       - /etc/localtime:/etc/localtime:ro
     env_file:
       - .env
