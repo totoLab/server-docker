@@ -1,5 +1,3 @@
-version: "3"
-
 services:
     client:
         image: nginx
@@ -11,3 +9,6 @@ services:
         volumes:
             - ${BASE}/sites:/var/www/
 
+networks:
+  default:
+    name: nginx-vanilla

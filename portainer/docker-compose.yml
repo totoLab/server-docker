@@ -12,8 +12,4 @@ services:
     ports:
       - 9000:9000
       - 9001:9443
-networks:
-  default:
-    name: nginx-network
-    external: true
 

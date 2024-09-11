@@ -39,5 +39,4 @@ services:
 
 networks:
   default:
-    external:
       name: nginx-network
