@@ -18,10 +18,7 @@ services:
     volumes:
       # Do not edit the next line. If you want to change the media storage location on your system, edit the value of UPLOAD_LOCATION in the .env file
       - ${UPLOAD_LOCATION}:/usr/src/app/upload
-      - ./external/laptop:/usr/src/app/external/common/laptop
-      - ./external/takeout:/usr/src/app/external/common/takeout
-      - ./external/theWeekndConcert:/usr/src/app/external/common/theWeekndConcert
-      - ./external/avventuraCompressa:/usr/src/app/external/common/avventuraCompressa
+      - ./external:/usr/src/app/external/common
       - /etc/localtime:/etc/localtime:ro
     env_file:
       - .env
