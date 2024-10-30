@@ -7,7 +7,7 @@ Server is currently
 NAS capabilities is achieved with a 2 disk software RAID (using laptop hard disks hooked through a docking station). 
 
 # Services
-RPi4 acts as a networking hub, for managing and  monitoring the network. Both instances have glances ("web htop") for monitoring resources.
+RPi4 acts as a networking hub, for managing and  monitoring the network. Every machine runs a `backrest` container for backups to multiple locations and `glances` for monitoring.
 
 ## Network hub (1)
 - [x] portainer (main)
@@ -31,6 +31,8 @@ RPi4 acts as a networking hub, for managing and  monitoring the network. Both in
 - [x] paperless ngx
 - [x] filebrowser
 - [x] kavita
+- [x] minecraft free server
+- [x] metube (content downloader)
 - [ ] audiobookshelf
 - [ ] addy.io
 
