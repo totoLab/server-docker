@@ -1,0 +1,22 @@
+version: "3.2"
+services:
+  backrest:
+    image: garethgeorge/backrest:latest
+    container_name: backrest
+    hostname: backrest
+    env_file:
+      - .env
+    volumes:
+      - ./backrest/data:/data
+      - ./backrest/config:/config
+      - ./backrest/cache:/cache
+      - ${BASE}:/userdata${BASE}
+      - ./.ssh:/root/.ssh # [optional] provide specific ssh keys for remote repositories
+    environment:
+      - BACKREST_DATA=/data 
+      - BACKREST_CONFIG=/config/config.json 
+      - XDG_CACHE_HOME=/cache
+      - TZ=Europe/Rome 
+    restart: unless-stopped
+    ports:
+      - 9898:9898
