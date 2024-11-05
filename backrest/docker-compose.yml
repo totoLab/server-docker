@@ -12,6 +12,7 @@ services:
       - ./backrest/cache:/cache
       - ${BASE}:/userdata${BASE}
       - ${LOCAL_REPOS}:/repos
+      - ./scripts:/root/scripts
       - ./.ssh:/root/.ssh # [optional] provide specific ssh keys for remote repositories
     environment:
       - BACKREST_DATA=/data 
