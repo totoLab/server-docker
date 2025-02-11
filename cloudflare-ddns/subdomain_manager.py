@@ -81,7 +81,8 @@ def main():
     save_locations = {
         "config_file": config_file,
         "alternative_save_location": [
-            os.path.expanduser("~/sites/antolab.xyz/html/data.json")
+            os.path.expanduser("~/sites/antolab.xyz/dist/data.json"),
+            os.path.expanduser("~/sites/antolab.xyz/public/data.json")
         ]
     }
 

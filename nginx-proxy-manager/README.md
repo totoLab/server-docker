@@ -1,3 +1,0 @@
-# nginx-proxy-manager
-
-## database
