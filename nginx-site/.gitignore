@@ -1,2 +1,3 @@
-nginx.conf
+nginx.conf*
 nginx-dockerSetup.sh
+.htpasswd
