@@ -11,7 +11,7 @@ RPi4 acts as a networking hub, for managing and  monitoring the network. Every m
 
 ## Network hub (1)
 - [x] portainer (main)
-- [x] nginx-proxy-manager (reverse proxy)
+- [x] caddy (reverse proxy)
 - [x] cloudflare-ddns
 - [ ] pi-hole 
 - [x] upsnap (WOL)
