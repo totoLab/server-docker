@@ -6,4 +6,7 @@ services:
     ports:
       - "6001:8081"
     volumes:
-      - ${BASE}/downloads:/downloads
+      - ${BASE}/downloads/metube:/downloads
+      - ./cookies:/cookies
+    environment:
+      - YTDL_OPTIONS={"cookiefile":"/cookies/cookies.txt"}
