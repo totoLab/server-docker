@@ -3,3 +3,4 @@ external
 postgres
 restore.sh
 db_dumps
+manual_dump.sql.gz
