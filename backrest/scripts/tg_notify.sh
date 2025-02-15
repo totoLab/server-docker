@@ -1,10 +1,8 @@
 URL="https://api.telegram.org/bot$TG_TOKEN/sendMessage"
 
-# Assign descriptive names to the input arguments
 PLAN_ID="$1"
 MESSAGE="$2"
 
-# Construct the text based on success condition
 if [[ "$MESSAGE" == *"snapshot success"* ]]; then
   text="*${PLAN_ID}* ✅
 ${MESSAGE}"  # Add checkmark for success
