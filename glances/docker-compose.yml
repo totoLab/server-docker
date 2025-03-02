@@ -1,6 +1,6 @@
 services:
     monitoring:
-        image: nicolargo/glances:3.4.0.5-full
+        image: nicolargo/glances:ubuntu-latest
         container_name: glances
         restart: always
         privileged: true
