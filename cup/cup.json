@@ -1,6 +1,0 @@
-{
-    "servers": {
-        "elitedesk": "http://192.168.1.233:7129"
-    },
-    "refresh_interval": "0 0 */6 * * *"
-}
