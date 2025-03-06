@@ -1,0 +1,21 @@
+---
+version: "3.4"
+
+services:
+  app:
+    image: ghcr.io/hargata/lubelogger:latest
+    build: .
+    container_name: lubelogger
+    restart: unless-stopped
+    # volumes used to keep data persistent
+    volumes:
+      - ./data:/App/data
+      - keys:/root/.aspnet/DataProtection-Keys
+    ports:
+      - 8080:8080
+    env_file:
+      - .env
+
+volumes:
+  data:
+  keys:
