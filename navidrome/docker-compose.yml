@@ -11,6 +11,7 @@ services:
       ND_LOGLEVEL: info
       ND_SESSIONTIMEOUT: 24h
       ND_BASEURL: ""
+      EnableCoverAnimation: false
     volumes:
       - "./data:/data"
       - "${BASE}/music:/music:ro"
